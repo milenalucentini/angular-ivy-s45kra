@@ -4,12 +4,28 @@
     </div>
       <div class = "card-body">
         <form [formGroup]= "beerForm">
+          
           <input 
           type="text"
           class ="form-control"
           placeholder="Beer title"
           [ngClass]= "! beerForm.controls.beerName.valid &&  beerForm.controls.beerName.touched ? 'is-invalid' : '' " 
           formControlName= "beerName"/>
+          
+          <input 
+          type="text"
+          class ="form-control"
+          placeholder="UPC code"
+          [ngClass]= "! beerForm.controls.upc.valid &&  beerForm.controls.upc.touched ? 'is-invalid' : '' " 
+          formControlName= "upc"/>
+          
+          <input 
+          type="number"
+          class ="form-control"
+          placeholder="Price"
+          [ngClass]= "! beerForm.controls.price.valid &&  beerForm.controls.price.touched ? 'is-invalid' : '' " 
+          formControlName= "price"/>
+        
         </form>
     </div>
 </div>
