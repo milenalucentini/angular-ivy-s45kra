@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { allBeerTypes, BeerForm } from '../../model/model';
 
 @Component({
@@ -18,7 +18,10 @@ export class BeerFormComponent implements OnInit {
   }
   private initForm(): FormGroup<BeerForm>{
     return new FormGroup<BeerForm>({
-      
+      beerName: new FormControl(null,Validators.required),
+      beerStyle: new FormControl(null,Validators.required),
+      upc: new FormControl(null,Validators.required),
+      price: new FormControl(null,Validators.required)
     }) 
   }
 }
