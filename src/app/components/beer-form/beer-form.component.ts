@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { allBeerTypes } from '../../model/model';
+import { FormGroup } from '@angular/forms';
+import { allBeerTypes, BeerForm } from '../../model/model';
 
 @Component({
   selector: 'app-beer-form',
@@ -9,6 +10,7 @@ import { allBeerTypes } from '../../model/model';
 export class BeerFormComponent implements OnInit {
 
   beerTypes = allBeerTypes;
+  beerForm: FormGroup<BeerForm>
   constructor() { }
 
   ngOnInit() {
