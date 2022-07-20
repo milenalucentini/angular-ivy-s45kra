@@ -20,6 +20,10 @@ export class BeerService {
     return maxId +1;
   }
 
+  addBeer(beer: Beer){
+    this.beers.unshift(beer);
+  }
+
 
 
   
