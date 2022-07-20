@@ -36,7 +36,7 @@ export interface Beer {
   lastModifiedDate: Date;
 }
 
-export interface BeerForma{
+export interface BeerForm{
   beerName: FormControl<string | undefined | null>
   beerStyle: FormControl<BeerStyle |undefined |null>
   upc: FormControl<string| undefined |null>
