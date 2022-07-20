@@ -1,3 +1,5 @@
+import { FormControl } from "@angular/forms";
+
 export type BeerStyle =
   | 'ALE'
   | 'GOSE'
@@ -18,4 +20,12 @@ export interface Beer {
   price: number;
   createdDate: Date;
   lastModifiedDate: Date;
+}
+
+export interface BeerForma{
+  beerName: FormControl<string | undefined | null>
+  beerStyle: FormControl<BeerStyle |undefined |null>
+  upc: FormControl<string| undefined |null>
+  price: FormControl<number| undefined| null>
+  
 }
