@@ -5,7 +5,7 @@ import { Beer } from '../model/model';
 @Injectable({providedIn: 'root'})
 export class BeerService {
 
-  private beers: Beer[] = beersData;
+  beers: Beer[] = beersData;
 
   constructor() {} 
   getBeerList(){
