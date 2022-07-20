@@ -14,6 +14,11 @@ export class BeerFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.beerForm = this.initForm()
   }
-
+  private initForm(): FormGroup<BeerForm>{
+    return new FormGroup<BeerForm>({
+      
+    }) 
+  }
 }
