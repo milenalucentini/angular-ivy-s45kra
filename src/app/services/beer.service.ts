@@ -15,6 +15,11 @@ export class BeerService {
     this.beers = this.beers.filter(beer => beer.id != item.id)
   }
 
+  generateId(){
+    const maxId = Math.max(...this.beers.map(beer => beer.id));
+    return maxId +1;
+  }
+
 
 
   
