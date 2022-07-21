@@ -1,6 +1,6 @@
 import { createAction, props } from "@ngrx/store";
 
 
-export const decrease = createAction('[beerList] Decrease');
+export const decrease = createAction('[beer] Decrease');
 
 

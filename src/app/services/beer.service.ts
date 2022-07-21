@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { beersData } from '../data/beer-list';
 import { Beer } from '../model/model';
+import { decrease } from '../store/actions';
 import { beerSelectors } from '../store/selector';
 
 @Injectable({providedIn: 'root'})
@@ -17,8 +18,9 @@ export class BeerService {
 
   
   deleteBeer(item : Beer){
-    this.beers = this.beers.filter(beer => beer.id != item.id)
+    this.store.dispatch(deleteBeerAction());
   }
+  
 
   generateId(){
     const maxId = Math.max(...this.beers.map(beer => beer.id));
@@ -32,4 +34,8 @@ export class BeerService {
 
 
   
+}
+
+function deleteBeerAction(): any {
+throw new Error('Function not implemented.');
 }
