@@ -29,7 +29,7 @@ export class BeerService {
 
   addBeer(beer: Beer){
     //this.beers.unshift(beer);
-    this.store.dispatch(addBeerAction({id: item.id} ));
+    this.store.dispatch(addBeerAction({beer} ));
   }
 
 
