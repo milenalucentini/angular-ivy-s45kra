@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { beersData } from '../data/beer-list';
 import { Beer } from '../model/model';
+import { beerSelectors } from '../store/selector';
 
 @Injectable({providedIn: 'root'})
 export class BeerService {
 
   beers: Beer[] = beersData;
 
-  constructor() {} 
-  getBeerList(){
-    return this.beers;
+  constructor(private store: Store) {} 
+  getBeerList(): Observable<Beer[]>{
+    return this.store.select(beerSelectors);
   }
 
   
