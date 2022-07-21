@@ -1,4 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-export const decrease = createAction('[beer] Decrease');
+export const decrease = createAction('[beer] Decrease',props<{id : number}>()
+);
 
 
