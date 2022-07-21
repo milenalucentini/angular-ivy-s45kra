@@ -1,5 +1,6 @@
 import { createAction, props } from "@ngrx/store";
-export const decrease = createAction('[beer] Decrease',props<{id : number}>()
+export const deleteBeerAction = createAction('[beer] Decrease',props<{id : number}>()
+export const increase = createAction('[beer] Decrease',props<{id : number}>()
 );
 
 
