@@ -7,9 +7,12 @@ import { BeerListComponent } from './components/beer-list/beer-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BeerFormComponent } from './components/beer-form/beer-form.component';
 import { BeerComponent } from './components/beer/beer.component';
+import { StoreModule } from '@ngrx/store';
+import { AppState } from './model/state';
+import { beerReducers } from './store/reducers';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, AppRoutingModule,ReactiveFormsModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule,ReactiveFormsModule,StoreModule.forRoot<AppState>({ beerState: beerReducers})],
   declarations: [AppComponent, BeerListComponent, BeerFormComponent, BeerComponent],
   bootstrap: [AppComponent],
 })
