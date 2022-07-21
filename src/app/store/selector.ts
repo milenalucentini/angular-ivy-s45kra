@@ -1,10 +1,11 @@
 
+import { state } from "@angular/animations";
 import { createSelector } from "@ngrx/store";
-import { AppState } from "../model/state";
+import { AppState, BeerState } from "../model/state";
 const beerStateFunction = (sate: AppState)=> state.beerState;
 export const beerSelectors = createSelector(
 beerStateFunction,
-(beerState:)
+(beerState:BeerState)=> beerState.list
 
 
-)
+);
