@@ -2,7 +2,7 @@ import { createReducer, on } from '@ngrx/store';
 
 import { beersData } from '../data/beer-list';
 import { BeerState } from '../model/state';
-import { addBeerAction } from './actions';
+import { addBeerAction,deleteBeerAction } from './actions';
 
 const initialBeerState: BeerState = { list: beersData };
 export const beerReducers = createReducer(
