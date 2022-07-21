@@ -17,7 +17,7 @@ export class BeerService {
   }
 
   
-  deleteBeer(item: Beer){
+  deleteBeer(){
     this.store.dispatch(deleteBeerAction({id: item.id} ));
   }
   
