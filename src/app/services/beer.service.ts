@@ -11,6 +11,8 @@ export class BeerService {
   getBeerList(){
     return this.beers;
   }
+
+  
   deleteBeer(item : Beer){
     this.beers = this.beers.filter(beer => beer.id != item.id)
   }
