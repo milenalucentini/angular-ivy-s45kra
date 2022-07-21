@@ -1,16 +1,22 @@
-import { createReducer, on } from "@ngrx/store";
+import { createReducer, on } from '@ngrx/store';
 
-import { beersData } from "../data/beer-list";
-import { BeerState } from "../model/state";
-import { addBeerAction } from "./actions";
+import { beersData } from '../data/beer-list';
+import { BeerState } from '../model/state';
+import { addBeerAction } from './actions';
 
+const initialBeerState: BeerState = { list: beersData };
+export const beerReducers = createReducer(
+  initialBeerState,
+  on(Action.deleteBeerAction, (state: BeerState, arg: { id: number }) => ({
+    ...state,
+    list: state.list.filter((beer) => beer.id != arg.id),
+  }))
+);
 
-const initialBeerState: BeerState = {list : beersData};
-export const beerReducers = createReducer(initialBeerState,
-  on(Action.delecBeertAction,(state: BeerState, arg: {id : number}) => ({...state,list: state.list.filter((beer) =>beer.id != arg.id), }))
-  );
-
-  export const addreduce = createReducer(initialBeerState,
-    on(Action.addBeerAction,(state: BeerState, arg: {beer: Beer}) => ({...state,list: pushBeer(state,  arg.beer), }))
-    );
-  
+export const addReducers = createReducer(
+  initialBeerState,
+  on(Action.addBeerAction, (state: BeerState, arg: { beer: Beer }) => ({
+    ...state,
+    list: pushBeer(state, arg.beer),
+  }))
+);
