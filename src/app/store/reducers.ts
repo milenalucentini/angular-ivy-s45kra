@@ -6,7 +6,7 @@ import { BeerState } from "../model/state";
 
 const initialBeerState: BeerState = {list : beersData};
 export const beerReducers = createReducer(initialBeerState,
-  on(Actions.decrease,(state) => ({...state,count: state.count-1}))
+  on(delectAction,(state: BeerState, arg: {id : number}) => ({...state,list: state.list.filter((beer) =>beer.id != args.id) }))
   );
 
 
