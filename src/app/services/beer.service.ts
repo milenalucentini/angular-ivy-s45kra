@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { beersData } from '../data/beer-list';
 import { Beer } from '../model/model';
-import { decrease } from '../store/actions';
+
 import { beerSelectors } from '../store/selector';
 
 @Injectable({providedIn: 'root'})
